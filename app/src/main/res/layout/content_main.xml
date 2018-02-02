@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.crackjack.weatherapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/date_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="DD MM YYYY"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/main_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/weather"
+                android:text="&#xf00d;"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="84sp" />
+
+            <TextView
+                android:id="@+id/temp_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/main_weather"
+                android:text="72° - Clear-Day"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/temp_data"
+                android:fontFamily="@font/weather"
+                android:text="&#xf078; Humidity : "
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/wind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/humidity"
+                android:fontFamily="@font/weather"
+                android:text="&#xf050; Wind : "
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_tomorrow"
+                android:layout_width="180dp"
+                android:layout_height="210dp"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:elevation="3dp"
+                app:cardBackgroundColor="@color/colorPrimaryLight"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tomorrow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="DD+1 MMM YYYY"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_below="@id/tomorrow"
+                        android:background="@color/colorAccent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <TextView
+                        android:layout_below="@id/tomorrow"
+                        android:id="@+id/tom_weather"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/weather"
+                        android:text="&#xf00d;"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="48sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tom_weather">
+
+
+                        <TextView
+                            android:id="@+id/tom_high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:text="99°"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="56sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="bottom"
+                            android:text="99°"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="36sp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_day_after"
+                android:layout_width="180dp"
+                android:layout_height="210dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:elevation="3dp"
+                app:cardBackgroundColor="@color/colorPrimaryLight"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/day_after_tomorrow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="DD+2 MMM YYYY"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_below="@id/day_after_tomorrow"
+                        android:background="@color/colorAccent"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <TextView
+                        android:layout_below="@id/day_after_tomorrow"
+                        android:id="@+id/after_weather"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/weather"
+                        android:text="&#xf00d;"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="48sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/after_weather">
+
+                        <TextView
+                            android:id="@+id/after_tom_high"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:text="99°"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="56sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.8"
+                            android:gravity="bottom"
+                            android:text="99°"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="36sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:paddingBottom="12dp"
+            android:textSize="16sp"
+            android:autoLink="web"
+            android:textColor="@color/colorPrimaryLight"
+            android:text="@string/powered_by_darksky" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
