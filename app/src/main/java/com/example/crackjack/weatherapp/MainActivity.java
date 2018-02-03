@@ -2,6 +2,7 @@ package com.example.crackjack.weatherapp;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -151,16 +152,17 @@ public class MainActivity extends AppCompatActivity {
                 current_icon.setText(Html.fromHtml(icons.getString(data.getJSONObject("currently").getString("icon"))));
 
                 double temp = (data.getJSONObject("currently").getInt("temperature")-32)*0.56;
-                DecimalFormat df = new DecimalFormat("#.00");
+                float v = Math.round(temp);
 
                 String typeDay = data.getJSONObject("currently").getString("summary");
-                temp_data.setText(""+ df.format(temp)+ "° - "+ typeDay);
+//                temp_data.setText(""+ (int)(temp)+ "° - "+ typeDay);
+                temp_data.setText(getResources().getString(R.string.main_temp, (int)temp, typeDay ));
 
                 double humidity_val = data.getJSONObject("currently").getDouble("humidity");
-                humidity.append(""+humidity_val);
+                humidity.setText(getResources().getString(R.string.humidity_string, humidity_val));
 
                 double wind_val = data.getJSONObject("currently").getDouble("windSpeed");
-                wind.append(""+wind_val + " km/h");
+                wind.setText(getResources().getString(R.string.wind_string, wind_val ));
 
 
             } catch (JSONException e) {

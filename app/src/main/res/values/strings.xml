@@ -3,4 +3,7 @@
     <string name="refresh">Refresh</string>
     <string name="location">location</string>
     <string name="powered_by_darksky">Powered by DarkSky</string>
+    <string name="main_temp">%1$d° - %2$s</string>
+    <string name="humidity_string">&#xf078; Humidity : %1$f</string>
+    <string name="wind_string">&#xf050; Wind : %1$f km/h </string>
 </resources>
